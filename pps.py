@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #version: 0.2
 # -*- coding: utf-8 -*-
-#Author: YeonJoo Oh, Chanel Caratti
+#Author: YeonJoo Oh
 
 # imported modules
 import nltk 
