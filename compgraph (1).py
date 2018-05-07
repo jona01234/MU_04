@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#Yeon Joo Oh, Chanel Caratti
 
 import numpy as np
 import tensorflow as tf
@@ -23,8 +24,8 @@ def define_computation_graph(vocab_size: int, batch_size: int):
         initial_state = cell.zero_state(batch_size, tf.float32)
         rnn_outputs, rnn_states = tf.nn.dynamic_rnn(cell, input_embeddings, initial_state=initial_state)
 
-    with tf.name_scope('hide_layer'):
-        w1 = tf.get_variable('w1', shape=(HIDDEN_SIZE, s_h_size))
+    with tf.name_scope('hide_layer'):#hidden layer
+        w1 = tf.get_variable('w1', shape=(HIDDEN_SIZE, s_h_size)) #hidden size, second hidden size
         b1 = tf.get_variable('b1', s_h_size)
         middle_projection = lambda x: tf.matmul(x, w1) + b1
         h_outputs = map_fn(middle_projection, rnn_outputs)
